@@ -1,7 +1,10 @@
 import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit'
+import userReducer from '../redux/reducer'
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    userReducer
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
