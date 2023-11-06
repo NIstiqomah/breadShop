@@ -1,20 +1,17 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../hook';
+import { dataType, userType } from './type';
 import { getUser } from '../redux/service';
-import { AppDispatch } from '../app/store';
-// import { userType } from './type';
 
 const Profile = () => {
-    const dispatch = useDispatch<AppDispatch>();
-    // const data = useSelector((state: any) => state.userReducer.users) as Array<userType>;
+    const dispatch = useAppDispatch();
+    const data = useAppSelector((state) => state.userReducer.users) as dataType<userType>;
 
     React.useEffect(() => {
         dispatch(getUser());
     }, [dispatch]);
 
-    // React.useEffect(() => {
-    //     console.log(data);
-    // }, []);
+    console.log(data.products);
 
     return (
         <div>
