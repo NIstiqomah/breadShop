@@ -13,11 +13,7 @@ const Profile = () => {
 
     console.log(data.products);
 
-    return (
-        <div>
-            <span>Hi</span>
-        </div>
-    );
+    return <>{data.products.map((el) => el.brand)}</>;
 };
 
 export default Profile;
