@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Profile from './pages/Profile';
+// import Profile from './pages/Profile';
 import { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
+import Homepage from './pages/Homepage';
 
 function App() {
     return (
@@ -10,7 +11,7 @@ function App() {
             <Provider store={store}>
                 <Router>
                     <Routes>
-                        <Route path="/" element={<Profile />} />
+                        <Route path="/" element={<Homepage />} />
                     </Routes>
                 </Router>
             </Provider>

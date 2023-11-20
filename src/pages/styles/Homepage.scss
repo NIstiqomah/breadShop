@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.home {
+    height: 100vh;
+    background-image: url('../../assets/roti-homepage.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    height: '2000px';
+    padding: 100px 280px;
+    p {
+        text-align: center;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-around !important;
+    height: 85px;
+    align-items: center;
+    color: black;
+    .logo {
+        letter-spacing: 5px;
+        h4 {
+            font-weight: bold;
+        }
+    }
+    ul {
+        display: flex;
+        list-style: none;
+        width: 40%;
+        justify-content: space-between;
+        li {
+            font-size: 1.2em;
+            a {
+                color: black;
+                text-decoration: none;
+            }
+            a:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    position: relative;
+    input {
+        position: absolute;
+        width: 40px;
+        height: 28px;
+        left: -6px;
+        top: -4px;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+    }
+    span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: black;
+        border-radius: 3px;
+        transition: all 0.5s;
+    }
+    span:nth-child(2) {
+        transform-origin: 0 0;
+    }
+    span:last-child {
+        transform-origin: 0 100%;
+    }
+    input:checked ~ span:nth-child(2) {
+        transform: rotate(45deg) translate(-1px, -1px);
+    }
+    input:checked ~ span:nth-child(3) {
+        transform: scale(0);
+    }
+    input:checked ~ span:last-child {
+        transform: rotate(-45deg) translate(-1px, 0);
+    }
+}
+
+@media (max-width: 1250px) {
+    nav ul {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        ul {
+            position: absolute;
+            right: 0;
+            flex-direction: column;
+            top: 0;
+            height: 100vh;
+            align-items: center;
+            justify-content: space-evenly;
+            z-index: -1;
+            width: 100%;
+            transform: translateX(100%);
+            transition: all 1s;
+            background-color: #FFD1DE;
+        }
+        ul.slide {
+            transform: translateX(0);
+        }
+        .menu-toggle {
+            display: flex;
+        }
+    }
+}
