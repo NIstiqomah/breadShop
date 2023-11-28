@@ -121,25 +121,27 @@ nav {
 .gradient1 {
     height: 16vh;
     background-image: linear-gradient(#ffd1de, #fff497);
-}
-
-.about {
-    height: 90vh;
-    background-color: #fff497;
-    overflow: hidden;
     h3 {
         text-align: center;
         font-weight: bold;
         letter-spacing: 1px;
+        padding-top: 80px;
     }
+}
+
+.about {
+    height: 76vh;
+    background-color: #fff497;
+    overflow: hidden;
     .grid-container {
         display: grid;
         padding: 10px 160px;
     }
-    .col-sm {
-        padding: 30px 40px;
-        img {
-            height: 500px;
+    .col-sm-12 {
+        padding: 30px 10px;
+        .img-fluid {
+            width: 100%;
+            height: auto;
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -158,6 +160,24 @@ nav {
             letter-spacing: 2px;
             padding-top: 30px;
         }
+    }
+}
+
+.menu {
+    height: 80vh;
+    background-color: #fff497;
+    overflow: hidden;
+    h3 {
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding-top: 20px;
+    }
+    p {
+        text-align: center;
+        font-size: 1.3em;
+        padding-top: 40px;
+        padding-bottom: 30px;
     }
 }
 
@@ -181,14 +201,12 @@ nav {
         margin-top: -100px;
     }
     .about {
+        height: 55vh;
         .grid-container {
             padding: 10px 40px;
         }
-        .col-sm {
+        .col-sm-12 {
             padding: 10px 10px;
-            img {
-                height: 320px;
-            }
             p {
                 font-size: 1em;
             }
@@ -199,6 +217,15 @@ nav {
                 padding-top: 20px;
             }
         }
+    }
+    .menu {
+        p {
+            font-size: 1em;
+        }
+    }
+    
+    .menu.carousel {
+        background-color: black;
     }
 }
 
@@ -236,11 +263,9 @@ nav {
         }
     }
     .about {
-        .col-sm {
+        height: 80vh;
+        .col-sm-12 {
             padding: 5px 10px;
-            img {
-                height: 320px;
-            }
             p.note {
                 margin-top: -30px;
                 padding: 0 80px;

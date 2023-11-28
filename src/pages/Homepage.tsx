@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import './styles/Homepage.scss';
+import CarouselCard from './CarouselCard';
 
 const Homepage = () => {
     const [name, setName] = React.useState(false);
@@ -22,7 +23,7 @@ const Homepage = () => {
                             <a href="#">Home</a>
                         </li>
                         <li>
-                            <a href="#">About Us</a>
+                            <a href="#gradient1">About Us</a>
                         </li>
                         <li>
                             <a href="#">Menu</a>
@@ -47,15 +48,20 @@ const Homepage = () => {
                     <button type="button">Order Now</button>
                 </div>
             </div>
-            <div className="gradient1"></div>
+            <div className="gradient1" id="gradient1">
+                <h3>ABOUT US</h3>
+            </div>
             <div className="about">
-                <h3>About Us</h3>
                 <div className="grid-container">
                     <div className="row">
-                        <div className="col-sm">
-                            <img src="/src/assets/bread-about.png" alt="bread about" />
+                        <div className="col-sm-12 col-lg-6 col-md-6">
+                            <img
+                                src="/src/assets/bread-about.png"
+                                className="img-fluid"
+                                alt="bread about"
+                            />
                         </div>
-                        <div className="col-sm">
+                        <div className="col-sm-12 col-lg-6 col-md-6">
                             <p className="note">
                                 Welcome to MyBread! Where we take pride in crafting the finest
                                 artisanal breads using time-honored techniques and the finest
@@ -68,6 +74,13 @@ const Homepage = () => {
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="menu" id="menu">
+                <h3>MENU</h3>
+                <p>This is our best seller breads. Let's try it!</p>
+                <div className="container">
+                    <CarouselCard />
                 </div>
             </div>
         </>
